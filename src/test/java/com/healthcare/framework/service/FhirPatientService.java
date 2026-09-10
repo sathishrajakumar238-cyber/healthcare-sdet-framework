@@ -11,7 +11,16 @@ public class FhirPatientService {
 
         return given()
                 .spec(ApiClientFactory.fhirSpec())
+                .body(getClass())
                 .when()
                 .get("/Patient?_count=1");
     }
+
+public Response createPatient(String fhirPatientJson) {
+    return given()
+            .spec(ApiClientFactory.fhirSpec())
+            .body(fhirPatientJson)
+            .when()
+            .post("/Patient");
+}
 }

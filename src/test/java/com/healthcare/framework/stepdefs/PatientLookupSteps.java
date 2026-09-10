@@ -7,12 +7,15 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Assertions;
+import com.healthcare.framework.utils.PatientDataBuilder;
+
 
 public class PatientLookupSteps {
 
     private Response response;
 
     private FhirPatientService patientService = new FhirPatientService();
+    private PatientDataBuilder patientData;
 
     @Given("the FHIR API is available")
     public void theFhirApiIsAvailable() {
@@ -41,4 +44,17 @@ public class PatientLookupSteps {
                 response.jsonPath().getString("resourceType")
         );
     }
+
+    @Given("a valid synthetic patient record")
+    public void aValidSyntheticPatientRecord() {
+    patientData = PatientDataBuilder.randomPatient();
+}
+
+    @When("I submit the patient to the FHIR API")
+    public void iSubmitThePatientToTheFhirApi() {
+    response = patientService.createPatient(patientData.toFhirJson());
+}
+
+
+
 }

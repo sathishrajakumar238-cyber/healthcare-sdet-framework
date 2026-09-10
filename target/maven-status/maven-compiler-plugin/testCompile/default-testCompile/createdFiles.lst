@@ -6,3 +6,4 @@ com\healthcare\framework\runner\RunCucumberTest.class
 com\healthcare\framework\config\ConfigManager.class
 com\healthcare\framework\service\FhirPatientService.class
 com\healthcare\framework\factory\ApiClientFactory.class
+com\healthcare\framework\utils\PatientDataBuilder.class

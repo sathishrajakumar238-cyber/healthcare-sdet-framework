@@ -9,3 +9,8 @@ Feature: Patient lookup via FHIR API
     When I request a single patient record
     Then the response status code should be 200
     And the response should be a valid FHIR Bundle
+
+   Scenario: Successfully create a new patient with random data
+    Given a valid synthetic patient record
+    When I submit the patient to the FHIR API
+    Then the response status code should be 201
