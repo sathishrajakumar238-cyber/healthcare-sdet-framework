@@ -54,7 +54,17 @@ public class PatientLookupSteps {
     public void iSubmitThePatientToTheFhirApi() {
     response = patientService.createPatient(patientData.toFhirJson());
 }
+   @Given("a patient record with an invalid birth date {string}")
+    public void aPatientRecordWithInvalidBirthdate(String invalidBirthdate) {
+        patientData = PatientDataBuilder.randomPatient();
+        patientData.birthDate = invalidBirthdate;
+    }
 
+    @Then("the response should contain an error message {string}")
+    public void theResponseShouldContainAnErrorMessage(String expectedErrorMessage) {
+        String actualErrorMessage = response.jsonPath().getString("issue[0].diagnostics");
+        Assertions.assertTrue(actualErrorMessage.contains(expectedErrorMessage));
+    }
 
 
 }

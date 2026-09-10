@@ -14,3 +14,8 @@ Feature: Patient lookup via FHIR API
     Given a valid synthetic patient record
     When I submit the patient to the FHIR API
     Then the response status code should be 201
+
+     Scenario: Reject a patient with an invalid birth date format
+    Given a patient record with an invalid birth date "13-13-2020"
+    When I submit the patient to the FHIR API
+    Then the response status code should be 400
