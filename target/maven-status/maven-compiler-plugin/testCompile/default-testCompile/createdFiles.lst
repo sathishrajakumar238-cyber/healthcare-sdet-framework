@@ -2,8 +2,10 @@ com\healthcare\framework\DriverFactoryTest.class
 com\healthcare\framework\factory\DriverFactory.class
 com\healthcare\framework\stepdefs\PatientLookupSteps.class
 com\healthcare\framework\ConnectivityTest.class
-com\healthcare\framework\runner\RunCucumberTest.class
 com\healthcare\framework\config\ConfigManager.class
+com\healthcare\framework\db\DatabaseManager.class
 com\healthcare\framework\service\FhirPatientService.class
-com\healthcare\framework\factory\ApiClientFactory.class
 com\healthcare\framework\utils\PatientDataBuilder.class
+com\healthcare\framework\DatabaseConnectionTest.class
+com\healthcare\framework\runner\RunCucumberTest.class
+com\healthcare\framework\factory\ApiClientFactory.class

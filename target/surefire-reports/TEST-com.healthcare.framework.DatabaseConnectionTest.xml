@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="RunCucumberTest" time="3.181" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.healthcare.framework.DatabaseConnectionTest" time="0.391" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -58,7 +58,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="Successfully retrieve a bundle of patients" classname="com.healthcare.framework.runner.RunCucumberTest" time="2.522"/>
-  <testcase name="Successfully create a new patient with random data" classname="com.healthcare.framework.runner.RunCucumberTest" time="0.351"/>
-  <testcase name="Reject a patient with an invalid birth date format" classname="com.healthcare.framework.runner.RunCucumberTest" time="0.182"/>
+  <testcase name="canConnectToDatabase" classname="com.healthcare.framework.DatabaseConnectionTest" time="0.391"/>
 </testsuite>
