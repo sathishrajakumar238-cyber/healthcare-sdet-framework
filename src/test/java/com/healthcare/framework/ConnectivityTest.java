@@ -1,6 +1,6 @@
 package com.healthcare.framework;
 
-import com.healthcare.framework.config.ConfigManager;
+import com.healthcare.framework.factory.ApiClientFactory;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -10,10 +10,8 @@ public class ConnectivityTest {
 
     @Test
     public void fhirSandboxIsReachable() {
-        System.out.println("Using base URL: " + ConfigManager.get().getApiBaseUrl());
-
         given()
-            .baseUri(ConfigManager.get().getApiBaseUrl())
+            .spec(ApiClientFactory.fhirSpec())
         .when()
             .get("/Patient?_count=1")
         .then()
