@@ -5,6 +5,7 @@ com\healthcare\framework\ConnectivityTest.class
 com\healthcare\framework\config\ConfigManager.class
 com\healthcare\framework\db\DatabaseManager.class
 com\healthcare\framework\service\FhirPatientService.class
+com\healthcare\framework\DbValidationTest.class
 com\healthcare\framework\utils\PatientDataBuilder.class
 com\healthcare\framework\DatabaseConnectionTest.class
 com\healthcare\framework\runner\RunCucumberTest.class

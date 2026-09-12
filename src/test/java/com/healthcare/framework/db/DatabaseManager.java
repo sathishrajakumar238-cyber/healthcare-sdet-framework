@@ -33,4 +33,21 @@ public class DatabaseManager {
             e.printStackTrace();
         }
     }
+
+    public static int getAppointmentCountForPatient(int patientId) throws SQLException {
+    String sql = "SELECT COUNT(e.pc_eid) AS total_appointments " +
+                 "FROM patient_data p " +
+                 "JOIN openemr_postcalendar_events e ON p.pid = e.pc_pid " +
+                 "WHERE p.pid = ? " +
+                 "GROUP BY p.pid";
+
+    try (var statement = getConnection().prepareStatement(sql)) {
+        statement.setInt(1, patientId);
+        var resultSet = statement.executeQuery();
+        if (resultSet.next()) {
+            return resultSet.getInt("total_appointments");
+        }
+        return 0;
+    }
+}
 }
